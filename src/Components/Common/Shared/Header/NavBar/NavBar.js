@@ -1,15 +1,16 @@
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MenuIcon from "@mui/icons-material/Menu";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Container } from "@mui/material";
+import ScaleOutlinedIcon from "@mui/icons-material/ScaleOutlined";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Button, Container, Divider, TextField } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import * as React from "react";
 
 const drawerWidth = 200;
@@ -24,13 +25,19 @@ function NavBar(props) {
 
   const drawer = (
     <div>
-      <Toolbar />
-      <Divider />
+      <Box sx={{ p: 1, display: "flex" }}>
+        <TextField size="small" placeholder="Search products" />
+        <Button variant="contained" endIcon={<SearchIcon />} />
+      </Box>
 
+      <Divider />
       <List>
         <ListItem button>Home</ListItem>
-        <ListItem button>Shop</ListItem>
+        <ListItem button>Shops</ListItem>
         <ListItem button>Products</ListItem>
+        <ListItem button>Catagories</ListItem>
+        <ListItem button>About</ListItem>
+        <ListItem button>Contact Us</ListItem>
       </List>
     </div>
   );
@@ -53,18 +60,113 @@ function NavBar(props) {
               >
                 <MenuIcon />
               </IconButton>
-              <Typography variant="h6" component="div">
-                Logo
-              </Typography>
+
+              {/* ===============
+              desktop main links
+              =================== */}
               <Box
                 sx={{
-                  display: { sm: "none", xs: "block" },
-                  ml: "auto",
+                  display: { sm: "flex", xs: "none" },
+                  width: "100%",
+                  justifyContent: "space-between",
                 }}
               >
-                <IconButton sx={{ color: "white" }}>
-                  <ShoppingCartIcon />
-                </IconButton>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  Home
+                </Button>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  Shops
+                </Button>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  Products
+                </Button>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  Catagories
+                </Button>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  About
+                </Button>
+                <Button
+                  sx={{
+                    color: "white",
+                    fontSize: 17,
+                    fontWeight: "600",
+                    display: "block",
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </Box>
+              {/*====================
+               features
+               ================== */}
+              <Box sx={{ display: { xs: "flex", sm: "none" }, ml: "auto" }}>
+                <Box className="primary-hover-effect">
+                  <IconButton className="primary-hover-effect">
+                    <ScaleOutlinedIcon
+                      sx={{ color: "white" }}
+                      fontSize="normal"
+                    />
+                  </IconButton>
+                </Box>
+                <Box sx={{ mx: 3 }} className="primary-hover-effect">
+                  <IconButton className="primary-hover-effect">
+                    <FavoriteBorderIcon
+                      sx={{ color: "white" }}
+                      fontSize="normal"
+                    />
+                  </IconButton>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                  className="primary-hover-effect"
+                >
+                  <IconButton className="primary-hover-effect">
+                    <ShoppingCartOutlinedIcon
+                      sx={{ color: "white" }}
+                      fontSize="normal"
+                    />
+                  </IconButton>
+                </Box>
               </Box>
             </Toolbar>
           </Container>

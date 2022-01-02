@@ -5,7 +5,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
@@ -37,25 +36,47 @@ const TopBar = () => {
   };
 
   return (
-    <AppBar color="transparent" position="static">
-      <Container maxWidth="xl">
+    <AppBar color="transparent" sx={{ boxShadow: 0 }} position="static">
+      <Container
+        maxWidth="xl"
+        sx={{
+          background: "#f1f1f1",
+          height: { sm: "50px" },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <Toolbar disableGutters sx={{ height: { sm: "50px" } }}>
-          {/* desktop contents */}
-          <Box sx={{ display: "flex", width: "100%" }}>
+          {/*===================
+           desktop contents
+           =================== */}
+          <Box
+            sx={{
+              display: { sm: "flex", xs: "none" },
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
             <Typography
               variant="h6"
               noWrap
               component="div"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", sm: "flex" },
                 alignItems: "center",
               }}
             >
               Mobile: +008 1234567891
             </Typography>
             {/* social  */}
-            <Box sx={{ mx: "auto" }}>
+            <Box
+              sx={{
+                borderLeft: "2px solid gray",
+                display: { xs: "none", sm: "block" },
+              }}
+            >
               <IconButton>
                 <FacebookRoundedIcon />
               </IconButton>
@@ -74,25 +95,27 @@ const TopBar = () => {
           {/* ==================
           mobile contents
           ===================== */}
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", sm: "none" },
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <Typography variant="body1">Mobile: +008 1234567891</Typography>
           </Box>
 
           {/* ================
           desktop content
           ================= */}
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              desktop content
-            </Button>
-          </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                sx={{ p: { sm: 1 }, py: { sm: 1.5 } }}
+              >
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
