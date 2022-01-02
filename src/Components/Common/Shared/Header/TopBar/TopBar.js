@@ -1,3 +1,7 @@
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import AppBar from "@mui/material/AppBar";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -11,7 +15,6 @@ import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const TopBar = () => {
@@ -34,17 +37,39 @@ const TopBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar color="transparent" position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
-            LOGO
-          </Typography>
+        <Toolbar disableGutters sx={{ height: { sm: "50px" } }}>
+          {/* desktop contents */}
+          <Box sx={{ display: "flex", width: "100%" }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                alignItems: "center",
+              }}
+            >
+              Mobile: +008 1234567891
+            </Typography>
+            {/* social  */}
+            <Box sx={{ mx: "auto" }}>
+              <IconButton>
+                <FacebookRoundedIcon />
+              </IconButton>
+              <IconButton>
+                <TwitterIcon />
+              </IconButton>
+              <IconButton>
+                <InstagramIcon />
+              </IconButton>
+              <IconButton>
+                <PinterestIcon />
+              </IconButton>
+            </Box>
+          </Box>
 
           {/* ==================
           mobile contents
