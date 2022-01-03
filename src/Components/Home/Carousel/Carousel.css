@@ -1,0 +1,51 @@
+.firstSlid{
+   
+
+    background-image: url(https://cdn.wallpapersafari.com/99/80/IpEkdW.jpg);
+  background-color: rgba(236, 231, 231, 0.9);
+  background-blend-mode: overlay;
+ background-repeat: no-repeat;
+ background-size: cover;
+ 
+
+  
+  
+}
+.firstSlid2{
+   
+
+    background-image: url(https://img.freepik.com/free-photo/photographic-equipment-with-cellphone-gray-background_23-2147856088.jpg?size=626&ext=jpg);
+    background-color: rgba(236, 231, 231, 0.9);
+    background-blend-mode: overlay;
+   background-repeat: no-repeat;
+   background-size: cover;
+  
+  
+}
+.firstSlid3{
+
+
+    background-image: url(https://wallpaperaccess.com/full/680075.jpg);
+    background-color: rgba(236, 231, 231, 0.9);
+    background-blend-mode: overlay;
+   background-repeat: no-repeat;
+   background-size: cover;
+  
+  
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .firstSlid img{
+        width:100%;
+    }
+    .firstSlid2 img{
+        width:100%;
+    }
+    .firstSlid3 img{
+        width:100%;
+    }
+  }
+
+
