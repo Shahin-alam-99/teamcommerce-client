@@ -1,8 +1,12 @@
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
+import PinterestIcon from "@mui/icons-material/Pinterest";
 import ScaleOutlinedIcon from "@mui/icons-material/ScaleOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import TwitterIcon from "@mui/icons-material/Twitter";
 import { Button, Container, Divider, TextField } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -39,6 +43,27 @@ function NavBar(props) {
         <ListItem button>About</ListItem>
         <ListItem button>Contact Us</ListItem>
       </List>
+
+      <Divider />
+      {/* social  */}
+      <Box
+        sx={{
+          display: { xs: "block", sm: "none" },
+        }}
+      >
+        <IconButton>
+          <FacebookRoundedIcon />
+        </IconButton>
+        <IconButton>
+          <TwitterIcon />
+        </IconButton>
+        <IconButton>
+          <InstagramIcon />
+        </IconButton>
+        <IconButton>
+          <PinterestIcon />
+        </IconButton>
+      </Box>
     </div>
   );
 
