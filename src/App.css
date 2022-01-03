@@ -5,3 +5,10 @@
 .primary-hover-effect:hover {
   color: blue;
 }
+
+.secondary-hover-effect {
+  transition: transform 0.3s;
+}
+.secondary-hover-effect:hover {
+  transform: scale(1.2);
+}
