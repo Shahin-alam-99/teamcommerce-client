@@ -8,13 +8,42 @@ const TopCatagories = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <Box sx={{ background: "#F1F1F1", py: 5, my: 15 }}>
       <Container maxWidth="xl">
-        <Typography variant="h4" sx={{ mb: 4 }}>
+        <Typography
+          variant="h4"
+          sx={{ mb: 4, textAlign: { xs: "center", md: "left" } }}
+        >
           Top Catagories
         </Typography>
         <Slider {...settings}>
@@ -24,15 +53,18 @@ const TopCatagories = () => {
               key={p}
               sx={{
                 background: "white",
-                width: "200px !important",
-                p: 3,
+                width: {
+                  md: "200px !important",
+                  xs: "85% !important",
+                },
+                p: { sm: 1, xs: 3 },
                 borderRadius: "5px",
               }}
             >
               <Box sx={{ overflow: "hidden" }}>
-                <img style={{ width: "100%" }} src={image} alt="" />
+                <img style={{ borderRadius: "5px" }} src={image} alt="" />
+                <Typography variant="body2">category name</Typography>
               </Box>
-              <h2>Catagory{p}</h2>
             </Box>
           ))}
         </Slider>

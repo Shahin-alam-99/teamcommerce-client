@@ -20,3 +20,13 @@
 .secondary-hover-effect:hover img {
   transform: scale(1.2);
 }
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
