@@ -4,6 +4,7 @@
 
 .primary-hover-effect:hover {
   color: blue;
+  cursor: pointer;
 }
 
 .secondary-hover-effect {

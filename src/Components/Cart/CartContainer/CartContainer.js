@@ -48,9 +48,15 @@ const CartContainer = () => {
       <Container sx={{ my: 3 }} maxWidth="xl">
         <Grid container spacing={{ xs: 1, md: 2 }}>
           {/* products */}
-          <Grid item md={8}>
+          <Grid item md={8} xs={12}>
             {/* cart title */}
-            <Grid container sx={{ borderBottom: "1px solid gray" }}>
+            <Grid
+              container
+              sx={{
+                borderBottom: "1px solid gray",
+                display: { xs: "none", sm: "flex" },
+              }}
+            >
               <Grid item md={4}>
                 <Typography variant="h5">Product</Typography>
               </Grid>
@@ -81,14 +87,24 @@ const CartContainer = () => {
             {products.map((product) => (
               <Grid
                 container
-                sx={{ borderBottom: "1px solid gray" }}
+                sx={{
+                  borderBottom: "1px solid gray",
+                  display: "flex",
+                  flexDirection: { xs: "column", md: "row" },
+                  alignItems: "center",
+                }}
                 spacing={{ md: 2, xs: 1 }}
               >
                 {/* product */}
                 <Grid
-                  sx={{ display: "flex", alignItems: "center" }}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: { md: "row", xs: "column" },
+                  }}
                   item
                   md={4}
+                  xs={12}
                 >
                   <Box>
                     <img src={product.src} alt="" />
@@ -103,6 +119,7 @@ const CartContainer = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    display: { xs: "none", sm: "block" },
                   }}
                 >
                   <Typography onClick={handleClick} variant="h5">
@@ -118,6 +135,7 @@ const CartContainer = () => {
                   }}
                   item
                   md={2}
+                  xs={12}
                 >
                   <IconButton onClick={handleRemoveQuantity}>
                     <RemoveCircleOutlineOutlinedIcon />
@@ -131,6 +149,7 @@ const CartContainer = () => {
                 <Grid
                   item
                   md={2}
+                  xs={12}
                   sx={{
                     display: "flex",
                     alignItems: "center",
@@ -159,7 +178,7 @@ const CartContainer = () => {
           {/*=========== 
           cart
           ================ */}
-          <Grid item md={4}>
+          <Grid item md={4} xs={12}>
             <Card>
               <CardContent>
                 <Typography
