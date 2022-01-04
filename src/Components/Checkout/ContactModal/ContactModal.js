@@ -21,7 +21,7 @@ export default function ContactModal({
   openContactModal,
   handleFieldData,
 }) {
-  const [option, setOption] = React.useState("Home");
+  const [option, setOption] = React.useState("");
   const options = [
     {
       id: 1,
