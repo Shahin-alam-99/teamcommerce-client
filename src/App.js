@@ -5,11 +5,13 @@ import HomeContainer from "./Components/Home/HomeContainer/HomeContainer";
 
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
+import Authprovider from "./Pages/Context/Authprovider";
 
 
 function App() {
   return (
     <div className="App">
+      <Authprovider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeContainer />} />
@@ -19,6 +21,7 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
+      </Authprovider>
     </div>
   );
 }

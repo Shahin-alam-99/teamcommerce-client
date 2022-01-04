@@ -16,7 +16,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 const settings = ["Profile", "Account", "Dashboard", 
-<Link to="/register">logout</Link>];
+<Link to="/login">logout</Link>];
 
 const TopBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);

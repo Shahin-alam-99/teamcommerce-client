@@ -1,10 +1,12 @@
+
 import { Button } from '@mui/material';
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import useFirebase from '../../UseFirebase/useFirebase';
+import useAuth from '../../Context/useAuth';
+
 
 const Register = () => {
- 
+ const{user,registerCreatePassword,signInWithGoogles}=useAuth();
     const nameRef=useRef();
     const emailRef=useRef()
     const passwordRef=useRef()
@@ -16,6 +18,17 @@ const Register = () => {
         const password=passwordRef.current.value;
        
         console.log(name,email,password);
+        registerCreatePassword(email,password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
  
  
     }
@@ -29,8 +42,9 @@ const Register = () => {
             <input type="password" ref={passwordRef} placeholder='Your Password' /> <br />
             <input style={{fontSize:"20px",fontWeight:"bolder"}} type="Submit" value="submit" />
             </form>
-            <Button  style={{textAlign:"center",width:"50vw",fontWeight:"bolder",fontSize:"20px"}} variant="outlined">Sign with google</Button><br />
+            <Button onClick={signInWithGoogles}  style={{textAlign:"center",width:"50vw",fontWeight:"bolder",fontSize:"20px"}} variant="outlined">Sign with google</Button><br />
           <h5>  Already Have an account!<Link to="/login"> Log In</Link></h5>
+          <h4>email:{user.email}</h4>
        
             </div>
         </div>
