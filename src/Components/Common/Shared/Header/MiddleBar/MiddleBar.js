@@ -11,8 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MiddleBar = () => {
+  const navigate = useNavigate();
   return (
     <Container
       maxWidth="xl"
@@ -61,6 +63,7 @@ const MiddleBar = () => {
             alignItems: "center",
           }}
           className="primary-hover-effect"
+          onClick={() => navigate("/cart")}
         >
           <IconButton className="primary-hover-effect">
             <ShoppingCartOutlinedIcon
