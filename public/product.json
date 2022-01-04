@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Dji mavic air 2 drone",
+    "src": "https://i.ibb.co/w6qBHrv/DJI-Mavic-Air-2-Drone.jpg",
+    "price": "30"
+  },
+  {
+    "id": "2",
+    "name": "Dji mavic air 2 drone",
+    "src": "https://i.ibb.co/w6qBHrv/DJI-Mavic-Air-2-Drone.jpg",
+    "price": "50"
+  },
+  {
+    "id": "3",
+    "name": "Dji mavic air 2 drone",
+    "src": "https://i.ibb.co/w6qBHrv/DJI-Mavic-Air-2-Drone.jpg",
+    "price": "20"
+  }
+]
