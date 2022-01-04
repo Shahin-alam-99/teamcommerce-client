@@ -1,4 +1,16 @@
-import { Button, Container, Grid, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Container,
+  FormControlLabel,
+  Grid,
+  Paper,
+  Radio,
+  RadioGroup,
+  Typography,
+} from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -92,12 +104,125 @@ const CheckoutContainer = () => {
               >
                 <Typography variant="h5">Payment Option</Typography>
               </Box>
-              <Box
-                sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}
-              ></Box>
+              <Box sx={{ display: "flex", mt: 2 }}>
+                <RadioGroup defaultValue="Bkash">
+                  <FormControlLabel
+                    value="Bkash"
+                    control={<Radio />}
+                    label="Bkash"
+                  />
+                  <FormControlLabel
+                    value="Paypal"
+                    control={<Radio />}
+                    label="Paypal"
+                  />
+                  <FormControlLabel
+                    value="Card"
+                    control={<Radio />}
+                    label="Card"
+                  />
+                </RadioGroup>
+              </Box>
             </Paper>
           </Grid>
-          <Grid item md={6}></Grid>
+          <Grid item md={6}>
+            <Card>
+              <CardContent>
+                <Typography
+                  sx={{ textAlign: "center" }}
+                  variant="h4"
+                  color="text.secondary"
+                  gutterBottom
+                >
+                  Your Orders
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    Product name
+                  </Typography>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    X product quantity
+                  </Typography>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    Price
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    Shipping
+                  </Typography>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    $ 0
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    Total
+                  </Typography>
+                  <Typography
+                    sx={{ textAlign: "center" }}
+                    variant="h6"
+                    gutterBottom
+                  >
+                    $ 0
+                  </Typography>
+                </Box>
+              </CardContent>
+              <CardActions
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Button onClick={() => navigate("/checkout")}>
+                  Place Order
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
         </Grid>
       </Container>
       <ContactModal
