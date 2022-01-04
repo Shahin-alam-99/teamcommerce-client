@@ -1,7 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "./Components/Common/Shared/ErrorPage/ErrorPage";
 import HomeContainer from "./Components/Home/HomeContainer/HomeContainer";
+
+import Login from "./Pages/Form/Login/Login";
 
 function App() {
   return (
@@ -10,11 +12,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeContainer />} />
           <Route path="/home" element={<HomeContainer />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
 
 export default App;
