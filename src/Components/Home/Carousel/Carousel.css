@@ -1,0 +1,77 @@
+.firstSlid{
+   
+
+    background-image: url(https://cdn.wallpapersafari.com/99/80/IpEkdW.jpg);
+  background-color: rgba(236, 231, 231, 0.9);
+  background-blend-mode: overlay;
+ background-repeat: no-repeat;
+ background-size: cover;
+ 
+
+  
+  
+}
+.firstSlid2{
+   
+
+    background-image: url(https://img.freepik.com/free-photo/photographic-equipment-with-cellphone-gray-background_23-2147856088.jpg?size=626&ext=jpg);
+    background-color: rgba(236, 231, 231, 0.9);
+    background-blend-mode: overlay;
+   background-repeat: no-repeat;
+   background-size: cover;
+  
+  
+}
+.firstSlid3{
+
+
+    background-image: url(https://wallpaperaccess.com/full/680075.jpg);
+    background-color: rgba(236, 231, 231, 0.9);
+    background-blend-mode: overlay;
+   background-repeat: no-repeat;
+   background-size: cover;
+  
+  
+}
+.colorEfface:hover{
+    color: rgb(4, 57, 231);
+}
+@media only screen and (min-width: 600px) {
+    .fruity{
+        margin-top: 200px;
+      padding: 20px;
+        
+     
+    }
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+    .firstSlid img{
+        width:100%;
+    }
+    .firstSlid2 img{
+        width:100%;
+    }
+    .firstSlid3 img{
+        width:100%;
+    }
+    .fruity{
+        margin: 0px;
+        padding: 0px;
+    }
+    /* .fruityi{
+        display: none;
+    }
+    .fruity{
+        
+        background-image: url(https://i.ibb.co/JxBsTHj/removetteam3.png);
+        background-color: rgba(236, 231, 231,0.9 );
+        background-blend-mode: overlay;
+       background-repeat: no-repeat;
+       background-size: cover;
+    } */
+  }
+
+
