@@ -14,10 +14,11 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import HeaderContainer from "../../Common/Shared/Header/HeaderContainer/HeaderContainer";
 
 const CartContainer = () => {
-  /* states */
+  const navigate = useNavigate(); /* states */
   const [products, setProducts] = useState([]);
   const [quantity, setQuantity] = useState(0);
 
@@ -263,7 +264,9 @@ const CartContainer = () => {
                   alignItems: "center",
                 }}
               >
-                <Button onClick={handleClick}>Proceed to Checkout </Button>
+                <Button onClick={() => navigate("/checkout")}>
+                  Proceed to Checkout{" "}
+                </Button>
               </CardActions>
             </Card>
           </Grid>
