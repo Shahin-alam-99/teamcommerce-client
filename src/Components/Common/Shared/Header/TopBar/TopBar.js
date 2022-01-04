@@ -13,8 +13,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link } from "react-router-dom";
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard", 
+<Link to="/register">logout</Link>];
 
 const TopBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
