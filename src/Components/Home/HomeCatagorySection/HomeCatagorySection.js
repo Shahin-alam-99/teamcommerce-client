@@ -8,16 +8,21 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../../../images/product-banner.png";
-import product from "../../../images/shoe.jpg";
 import ProductModal from "../../ProductModal/ProductModal";
 
 const HomeCatagorySection = () => {
+  const [shoes, setShoes] = useState([]);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  useEffect(() => {
+    fetch("./shoe.json")
+      .then((res) => res.json())
+      .then((data) => setShoes(data));
+  }, []);
   return (
     <>
       <Container sx={{ mb: 5 }} maxWidth="xl">
@@ -36,14 +41,14 @@ const HomeCatagorySection = () => {
           </Grid>
           <Grid item sm={12} md={8} lg={8}>
             <Grid container spacing={{ md: 2, xs: 1 }}>
-              {[...Array(8)].map((p) => (
+              {shoes.map((shoe) => (
                 <Grid item md={3} lg={3} sm={4} xs={12}>
                   <Card onClick={handleOpen} className="secondary-hover-effect">
                     <Box sx={{ overflow: "hidden" }}>
                       <CardMedia
                         component="img"
                         height="140"
-                        image={product}
+                        image={shoe.src}
                         alt="green iguana"
                       />
                     </Box>
@@ -51,7 +56,7 @@ const HomeCatagorySection = () => {
                       sx={{ textAlign: "center", pb: "0 !important" }}
                     >
                       <Typography gutterBottom variant="h5" component="div">
-                        Product Name
+                        {shoe.name}
                       </Typography>
                       <Box
                         sx={{
@@ -60,14 +65,16 @@ const HomeCatagorySection = () => {
                           justifyContent: "center",
                         }}
                       >
-                        <Rating value={3} readOnly />
-                        <Typography variant="body2">(3 Reviews)</Typography>
+                        <Rating value={shoe.ratings} readOnly />
+                        <Typography variant="body2">
+                          ({shoe.reviews})
+                        </Typography>
                       </Box>
                       <Typography
                         sx={{ textAlign: "center", my: 2 }}
                         variant="h5"
                       >
-                        $40
+                        $ {shoe.price}
                       </Typography>
                     </CardContent>
                   </Card>

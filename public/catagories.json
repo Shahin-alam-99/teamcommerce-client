@@ -1,27 +1,32 @@
 [
   {
     "id": "1",
-    "src": "",
+    "src": "https://i.ibb.co/86jV0SR/shoe.jpg",
     "name": "Shoes"
   },
   {
     "id": "2",
-    "src": "",
-    "name": "Shirts"
+    "src": "https://i.ibb.co/nwY3yfr/head.jpg",
+    "name": "Headphones"
   },
   {
     "id": "3",
-    "src": "",
-    "name": "Pants"
+    "src": "https://i.ibb.co/CBtkgSV/pexels-pixabay-51383.jpg",
+    "name": "Camera"
   },
   {
     "id": "4",
-    "src": "",
-    "name": "Gadgets"
+    "src": "https://i.ibb.co/TLvSm0x/pexels-jatin-anand-125779.jpg",
+    "name": "Watch"
   },
   {
     "id": "5",
-    "src": "",
-    "name": "Gadgets"
+    "src": "https://i.ibb.co/DVYJqhg/pexels-angele-j-128402.jpg",
+    "name": "Groceries"
+  },
+  {
+    "id": "6",
+    "src": "https://i.ibb.co/f4Fs5r9/t-shirt.jpg",
+    "name": "T-Shirt"
   }
 ]
