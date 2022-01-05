@@ -7,6 +7,7 @@ import HeaderContainer from "./Components/Common/Shared/Header/HeaderContainer/H
 import ContactUs from "./Components/ContactUs/ContactUs";
 import HomeContainer from "./Components/Home/HomeContainer/HomeContainer";
 import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
+import ProductsContainer from "./Components/Products/ProductsContainer/ProductsContainer";
 import Authprovider from "./Pages/Context/Authprovider";
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
@@ -34,6 +35,7 @@ function App() {
               }
             />
             <Route path="/contactUs" element={<ContactUs />} />
+            <Route path="/products" element={<ProductsContainer />} />
 
             <Route path="*" element={<ErrorPage />} />
           </Routes>
