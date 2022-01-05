@@ -1,24 +1,18 @@
-import { GoogleAuthProvider,getAuth ,signInWithPopup,createUserWithEmailAndPassword,onAuthStateChanged ,signInWithEmailAndPassword   } from "firebase/auth";
+import { GoogleAuthProvider,getAuth ,signInWithPopup,createUserWithEmailAndPassword,onAuthStateChanged ,signInWithEmailAndPassword ,signOut,updateProfile   } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentic from "../Firebase/Firebase.init";
-import { Password } from '@mui/icons-material';
+
 
 const googleProvider = new GoogleAuthProvider();
 initializeAuthentic();
 const useFirebase=()=>{
-    const [user,setUser]=useState([])
+    const [user,setUser]=useState([]);
+    const [isLoading,setIsLoading]=useState(true);
     const auth = getAuth();
 
     const signInWithGoogles=()=>{
-        signInWithPopup(auth, googleProvider)
-  .then((result) => {
-  
-    const user = result.user;
-    setUser(user)
-  }).catch((error) => {
-    
-   
-  });
+      return  signInWithPopup(auth, googleProvider)
+ 
     }
 
      const registerCreatePassword=(email,password)=>{
@@ -28,23 +22,52 @@ const useFirebase=()=>{
        return signInWithEmailAndPassword(auth, email, password)
      }
      useEffect(()=>{
-      onAuthStateChanged(auth, (user) => {
+    const unsubscribe= onAuthStateChanged(auth, (user) => {
         if (user) {
-         
-         
-          setUser(user)
+         setUser(user)
           // ...
         } else {
           setUser({})
+          
         }
+        setIsLoading(false)
+       
       });
+      return ()=>unsubscribe();
      },[])
+
+     const updateName=(name)=>{
+      updateProfile(auth.currentUser, {
+        displayName: name
+      }).then(() => {
+        // Profile updated!
+        // window.location.reload();
+        const newUser={...user ,displayName:name}
+        setUser(newUser)
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        // ...
+      });
+     }
+     const signOutPlace=()=>{
+      signOut(auth).then(() => {
+        // Sign-out successful.
+      }).catch((error) => {
+        // An error happened.
+      });
+     }
 return {
 user,
 setUser,
 signInWithGoogles,
 registerCreatePassword,
-signInPassword
+signInPassword,
+signOutPlace,
+isLoading,
+setIsLoading,
+ updateName
+
 }
 
 }

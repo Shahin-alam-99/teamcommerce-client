@@ -1,16 +1,17 @@
-
-import { Button } from '@mui/material';
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate,  } from 'react-router-dom';
 import useAuth from '../../Context/useAuth';
 
-
 const Register = () => {
- const{user,registerCreatePassword,signInWithGoogles}=useAuth();
+ const{registerCreatePassword,setIsLoading,updateName}=useAuth();
+ let navigate = useNavigate();
+ let location = useLocation();
+ const uri=location?.state?.from||'/'
+
     const nameRef=useRef();
     const emailRef=useRef()
     const passwordRef=useRef()
- 
+
    const handelLogin=(e)=>{
         e.preventDefault();
         const name=nameRef.current.value;
@@ -20,21 +21,26 @@ const Register = () => {
         console.log(name,email,password);
         registerCreatePassword(email,password)
         .then((userCredential) => {
+          setIsLoading(true)
+          updateName(name)
             // Signed in 
             const user = userCredential.user;
             // ...
+            navigate(uri)
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // ..
-          });
- 
- 
+          })
+          .finally(()=>{
+            setIsLoading(false)
+          })
     }
+   
     return (
         <div className='loginCss'>
-            <h1 style={{textAlign:"center",padding:"40px"}}>register here </h1>
+            <h1 style={{textAlign:"center",padding:"40px"}}>Register Here </h1>
             <div style={{textAlign:"center"}}>
             <form  onClick={handelLogin}>
             <input type="text" ref={nameRef} placeholder='Your Name' /> <br />
@@ -42,9 +48,9 @@ const Register = () => {
             <input type="password" ref={passwordRef} placeholder='Your Password' /> <br />
             <input style={{fontSize:"20px",fontWeight:"bolder"}} type="Submit" value="submit" />
             </form>
-            <Button onClick={signInWithGoogles}  style={{textAlign:"center",width:"50vw",fontWeight:"bolder",fontSize:"20px"}} variant="outlined">Sign with google</Button><br />
-          <h5>  Already Have an account!<Link to="/login"> Log In</Link></h5>
-          <h4>email:{user.email}</h4>
+            
+          <h4>  Already Have an account!<Link to="/login"> Log In</Link></h4>
+      
        
             </div>
         </div>

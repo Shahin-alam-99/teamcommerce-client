@@ -7,6 +7,7 @@ import HomeContainer from "./Components/Home/HomeContainer/HomeContainer";
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
 import Authprovider from "./Pages/Context/Authprovider";
+import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/cart" element={<CartContainer />} />
-          <Route path="/checkout" element={<CheckoutContainer />} />
+          <Route path="/checkout" element={ <PrivetRoute><CheckoutContainer /></PrivetRoute> } />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

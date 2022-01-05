@@ -47,9 +47,7 @@ function NavBar(props) {
         <ListItem button>Catagories</ListItem>
         <ListItem button>About</ListItem>
         <ListItem button>Contact Us</ListItem>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/login">
-          <ListItem button>Log in</ListItem>
-        </Link>
+     
       </List>
 
       <Divider />
@@ -165,18 +163,7 @@ function NavBar(props) {
                 >
                   Contact Us
                 </Button>
-                <Link style={{ textDecoration: "none" }} to="/login">
-                  <Button
-                    sx={{
-                      color: "white",
-                      fontSize: 17,
-                      fontWeight: "600",
-                      display: "block",
-                    }}
-                  >
-                    Log In
-                  </Button>
-                </Link>
+                
               </Box>
               {/*====================
                features
