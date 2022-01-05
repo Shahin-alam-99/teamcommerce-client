@@ -16,7 +16,6 @@ import ProductsContainer from "./Components/Products/ProductsContainer/ProductsC
 import Authprovider from "./Pages/Context/Authprovider";
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
-import Footer from './Components/Common/Shared/Footer/Footer';
 import AboutUs from './Components/AboutUs/AboutUs';
 
 function App() {
