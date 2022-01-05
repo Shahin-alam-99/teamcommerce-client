@@ -1,9 +1,9 @@
 import { Box, Container, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import image from "../../../images/shoe.jpg";
 
 const TopCatagories = () => {
+  const [catagories, setCatagories] = useState([]);
   const settings = {
     dots: true,
     infinite: true,
@@ -37,6 +37,12 @@ const TopCatagories = () => {
       },
     ],
   };
+
+  useEffect(() => {
+    fetch("./catagories.json")
+      .then((res) => res.json())
+      .then((data) => setCatagories(data));
+  }, []);
   return (
     <Box sx={{ background: "#F1F1F1", py: 5, my: 15 }}>
       <Container maxWidth="xl">
@@ -47,10 +53,10 @@ const TopCatagories = () => {
           Top Catagories
         </Typography>
         <Slider {...settings}>
-          {[...Array(20)].map((p) => (
+          {catagories.map((catagory) => (
             <Box
               className="secondary-hover-effect"
-              key={p}
+              key={catagory.id}
               sx={{
                 background: "white",
                 width: {
@@ -63,9 +69,13 @@ const TopCatagories = () => {
             >
               <Box>
                 <Box sx={{ overflow: "hidden" }}>
-                  <img style={{ borderRadius: "5px" }} src={image} alt="" />
+                  <img
+                    style={{ borderRadius: "5px" }}
+                    src={catagory.src}
+                    alt=""
+                  />
                 </Box>
-                <Typography variant="body2">category name</Typography>
+                <Typography variant="body2">{catagory.name}</Typography>
               </Box>
             </Box>
           ))}
