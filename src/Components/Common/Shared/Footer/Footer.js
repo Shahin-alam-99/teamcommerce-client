@@ -3,6 +3,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
      return (
@@ -31,16 +32,16 @@ const Footer = () => {
                          </Typography>
                          <hr />
                          <Typography variant="body1" >
-                              About us
+                              <Link style={{ textDecoration: 'none' }} to="/about">About us</Link>
                          </Typography>
                          <Typography variant="body1" >
-                              Faq
+                              <Link style={{ textDecoration: 'none' }} to="/faq">Faq</Link>
                          </Typography>
                          <Typography variant="body1" >
-                              Delivery information
+                              <Link style={{ textDecoration: 'none' }} to="/Delivery information">Delivery information</Link>
                          </Typography>
                          <Typography variant="body1">
-                              contact us
+                              <Link style={{ textDecoration: 'none' }} to="/contact us">contact us</Link>
                          </Typography>
                     </Grid>
                     <Grid item xs={12} sm={12} md={2} sx={{ p: 2 }}>
@@ -49,16 +50,17 @@ const Footer = () => {
                          </Typography>
                          <hr />
                          <Typography variant="body1" >
-                              My Account
+                              <Link style={{ textDecoration: 'none' }} to="/contact us">My Account</Link>
                          </Typography>
                          <Typography variant="body1" >
-                              Order history
+                              <Link style={{ textDecoration: 'none' }} to="/Order history">Order history</Link>
+
                          </Typography>
                          <Typography variant="body1" >
-                              Wish list
+                              <Link style={{ textDecoration: 'none' }} to="/Wish list">Wish list</Link>
                          </Typography>
                          <Typography variant="body1">
-                              Specials
+                              <Link style={{ textDecoration: 'none' }} to="/Specials">Specials</Link>
                          </Typography>
                     </Grid>
                     <Grid item xs={12} sm={12} md={2} sx={{ p: 2 }}>
@@ -67,16 +69,16 @@ const Footer = () => {
                          </Typography>
                          <hr />
                          <Typography variant="body1" >
-                              Discount Returns
+                              <Link style={{ textDecoration: 'none' }} to="/Discount Returns">Discount Returns</Link>
                          </Typography>
                          <Typography variant="body1" >
-                              Policy
+                              <Link style={{ textDecoration: 'none' }} to="/Policy">Policy</Link>
                          </Typography>
                          <Typography variant="body1" >
-                              Customer service
+                              <Link style={{ textDecoration: 'none' }} to="/Customer service">Customer service</Link>
                          </Typography>
                          <Typography variant="body1">
-                              Team & condition
+                              <Link style={{ textDecoration: 'none' }} to="/Team & condition">Team & condition</Link>
                          </Typography>
                     </Grid>
                     <Grid item xs={12} sm={12} md={3} sx={{ p: 2 }}>

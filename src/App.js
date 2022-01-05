@@ -19,6 +19,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutContainer />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
 
     </div>
