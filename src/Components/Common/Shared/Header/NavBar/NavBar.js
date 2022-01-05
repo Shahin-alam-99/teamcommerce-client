@@ -43,10 +43,15 @@ function NavBar(props) {
           Home
         </ListItem>
         <ListItem button>Shops</ListItem>
+
+        <ListItem button>Products</ListItem>
+        <ListItem onClick={() => navigate("/catagories")} button >Catagories</ListItem>
+
         <ListItem onClick={() => navigate("/products")} button>
           Products
         </ListItem>
         <ListItem button>Catagories</ListItem>
+
         <ListItem button>About</ListItem>
         <ListItem onClick={() => navigate("/contactUs")} button>
           Contact Us
@@ -144,6 +149,7 @@ function NavBar(props) {
                     fontWeight: "600",
                     display: "block",
                   }}
+                  onClick={() => navigate("/catagories")}
                 >
                   Catagories
                 </Button>
