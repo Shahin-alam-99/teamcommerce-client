@@ -1,5 +1,6 @@
+import './App.css';
+import Footer from './Components/Common/Shared/Footer/Footer';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import CartContainer from "./Components/Cart/CartContainer/CartContainer";
 import CheckoutContainer from "./Components/Checkout/CheckoutContainer/CheckoutContainer";
 import ErrorPage from "./Components/Common/Shared/ErrorPage/ErrorPage";
@@ -15,6 +16,7 @@ import Register from "./Pages/Form/Register/Register";
 function App() {
   return (
     <div className="App">
+
       <Authprovider>
         <BrowserRouter>
           <HeaderContainer></HeaderContainer>
@@ -36,7 +38,6 @@ function App() {
             />
             <Route path="/contactUs" element={<ContactUs />} />
             <Route path="/products" element={<ProductsContainer />} />
-
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>
