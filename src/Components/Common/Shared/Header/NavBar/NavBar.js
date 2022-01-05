@@ -16,7 +16,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Toolbar from "@mui/material/Toolbar";
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 200;
 
@@ -46,8 +46,9 @@ function NavBar(props) {
         <ListItem button>Products</ListItem>
         <ListItem button>Catagories</ListItem>
         <ListItem button>About</ListItem>
-        <ListItem button>Contact Us</ListItem>
-     
+        <ListItem onClick={() => navigate("/contactUs")} button>
+          Contact Us
+        </ListItem>
       </List>
 
       <Divider />
@@ -160,10 +161,10 @@ function NavBar(props) {
                     fontWeight: "600",
                     display: "block",
                   }}
+                  onClick={() => navigate("/contactUs")}
                 >
                   Contact Us
                 </Button>
-                
               </Box>
               {/*====================
                features
