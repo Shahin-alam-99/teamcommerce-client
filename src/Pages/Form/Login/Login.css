@@ -4,4 +4,20 @@
   background-blend-mode: overlay;
  background-repeat: no-repeat;
  background-size: cover;
+
+ padding-bottom: 200px;
+ margin: 20px;
+}
+.loginCss form{
+    align-items: center;
+    justify-content: center;
+  
+    max-width: auto;
+    text-align: center;
+}
+.loginCss form input{
+    width: 50vw;
+    margin: 5px;
+    padding: 15px;
+   
 }

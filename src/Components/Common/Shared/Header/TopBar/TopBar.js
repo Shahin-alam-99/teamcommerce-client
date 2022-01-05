@@ -13,12 +13,25 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../../../../Pages/Context/useAuth";
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+// const settings = ["Profile",
+// <Link to="/login">Account</Link>,
+//   "Dashboard", 
+// <Link  to="/login">logout</Link>];
 
 const TopBar = () => {
+  const {user,signOutPlace,signInWithGoogles}=useAuth();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const settings = ["Profile",
+    'Account',
+    "Dashboard", 
+    
+      user.email ?  <p  onClick={signOutPlace}>logout</p> :
+      <Link to="/login">Sign In</Link>
+    
+ ];
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
