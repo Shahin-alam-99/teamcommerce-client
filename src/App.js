@@ -1,5 +1,4 @@
 import './App.css';
-import Footer from './Components/Common/Shared/Footer/Footer';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CartContainer from "./Components/Cart/CartContainer/CartContainer";
 import CheckoutContainer from "./Components/Checkout/CheckoutContainer/CheckoutContainer";
@@ -12,6 +11,8 @@ import ProductsContainer from "./Components/Products/ProductsContainer/ProductsC
 import Authprovider from "./Pages/Context/Authprovider";
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
+import Footer from './Components/Common/Shared/Footer/Footer';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -37,9 +38,11 @@ function App() {
               }
             />
             <Route path="/contactUs" element={<ContactUs />} />
+            <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
             <Route path="/products" element={<ProductsContainer />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
+          <Footer></Footer>
         </BrowserRouter>
       </Authprovider>
     </div>
