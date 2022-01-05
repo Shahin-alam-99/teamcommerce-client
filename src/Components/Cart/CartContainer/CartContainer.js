@@ -15,7 +15,6 @@ import {
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import HeaderContainer from "../../Common/Shared/Header/HeaderContainer/HeaderContainer";
 
 const CartContainer = () => {
   const navigate = useNavigate(); /* states */
@@ -43,8 +42,6 @@ const CartContainer = () => {
   }, []);
   return (
     <>
-      {/* header */}
-      <HeaderContainer />
       {/* main cart */}
       <Container sx={{ my: 3 }} maxWidth="xl">
         <Grid container spacing={{ xs: 1, md: 2 }}>

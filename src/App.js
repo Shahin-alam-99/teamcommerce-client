@@ -3,31 +3,41 @@ import "./App.css";
 import CartContainer from "./Components/Cart/CartContainer/CartContainer";
 import CheckoutContainer from "./Components/Checkout/CheckoutContainer/CheckoutContainer";
 import ErrorPage from "./Components/Common/Shared/ErrorPage/ErrorPage";
+import HeaderContainer from "./Components/Common/Shared/Header/HeaderContainer/HeaderContainer";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import HomeContainer from "./Components/Home/HomeContainer/HomeContainer";
+import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
+import Authprovider from "./Pages/Context/Authprovider";
 import Login from "./Pages/Form/Login/Login";
 import Register from "./Pages/Form/Register/Register";
-import Authprovider from "./Pages/Context/Authprovider";
-import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
-
 
 function App() {
   return (
     <div className="App">
       <Authprovider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomeContainer />} />
-          <Route path="/home" element={<HomeContainer />} />
-          <Route path="/login" element={<Login />} />
+        <BrowserRouter>
+          <HeaderContainer></HeaderContainer>
+          <Routes>
+            <Route path="/" element={<HomeContainer />} />
+            <Route path="/home" element={<HomeContainer />} />
+            <Route path="/login" element={<Login />} />
 
-          <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Register />} />
 
-          <Route path="/cart" element={<CartContainer />} />
-          <Route path="/checkout" element={ <PrivetRoute><CheckoutContainer /></PrivetRoute> } />
+            <Route path="/cart" element={<CartContainer />} />
+            <Route
+              path="/checkout"
+              element={
+                <PrivetRoute>
+                  <CheckoutContainer />
+                </PrivetRoute>
+              }
+            />
+            <Route path="/contactUs" element={<ContactUs />} />
 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </BrowserRouter>
       </Authprovider>
     </div>
   );
