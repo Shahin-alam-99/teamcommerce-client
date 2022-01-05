@@ -61,8 +61,10 @@ const TopCatagories = () => {
                 borderRadius: "5px",
               }}
             >
-              <Box sx={{ overflow: "hidden" }}>
-                <img style={{ borderRadius: "5px" }} src={image} alt="" />
+              <Box>
+                <Box sx={{ overflow: "hidden" }}>
+                  <img style={{ borderRadius: "5px" }} src={image} alt="" />
+                </Box>
                 <Typography variant="body2">category name</Typography>
               </Box>
             </Box>

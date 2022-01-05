@@ -19,6 +19,7 @@ const ProductsContainer = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, []);
+  console.log(products);
   return (
     <Container>
       <Grid container spacing={{ md: 2, xs: 1 }}>
